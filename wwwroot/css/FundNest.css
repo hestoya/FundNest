@@ -1,2 +1,242 @@
-﻿body {
+﻿:root {
+    /* ─── RAW PALETTE — never override these ───────────────── */
+
+    /* Purple scale */
+    --p900: #2D2377;
+    --p800: #3A2D98;
+    --p700: #513EC0;
+    --p600: #6654CA;
+    --p500: #7E6FD5;
+    --p400: #9A91E1;
+    --p300: #B7B3EC;
+    --p200: #D8D6F7;
+    --p100: #F2F1FD;
+
+    /* Cyan scale */
+    --c900: #0E6482;
+    --c800: #1384AB;
+    --c700: #1CBEF5;
+    --c600: #4CCCF7;
+    --c200: #E6FAFF;
+    --c100: #F6FDFF;
+
+    /* Navy scale */
+    --n800: #0B1E51;
+    --n600: #415584;
+    --n400: #8E9CB8;
+    --n200: #D9DEE9;
+    --n100: #F5F7FA;
+
+    /* ─── SEMANTIC TOKENS — reference these in components ──── */
+
+    /* Background layers */
+    --fn-bg: #DBE9F7;
+    --fn-surface: #FFFFFF;
+    --fn-surface-2: #F5F7FA;
+    --fn-surface-3: #EDF2F7;
+    --fn-topbar: #FFFFFF;
+    --fn-nav: #FFFFFF;
+
+    /* Text */
+    --fn-text: #0B1E51;
+    --fn-text-body: #212121;
+    --fn-text-secondary: #415584;
+    --fn-text-muted: #8E9CB8;
+
+    /* Brand */
+    --fn-primary: #513EC0;
+    --fn-primary-hover: #3A2D98;
+    --fn-primary-tint: #F2F1FD;
+    --fn-secondary: #1CBEF5;
+    --fn-secondary-tint: #E6FAFF;
+
+    /* Borders */
+    --fn-border: #E4E9EF;
+    --fn-mist: #B7C5D5;
+    --fn-divider: #E4E9EF;
+
+    /* Semantic */
+    --fn-success: #4CAF50;
+    --fn-success-tint: #E8F5E9;
+    --fn-warning: #F6B73C;
+    --fn-warning-tint: #FFF8E1;
+    --fn-error: #D6515A;
+    --fn-error-tint: #FEE8E8;
+
+    /* Category icon boxes */
+    --fn-cat-food-bg: #FFF3E0;
+    --fn-cat-food-ico: #E65100;
+    --fn-cat-bills-bg: #FEE8E8;
+    --fn-cat-bills-ico: #D6515A;
+    --fn-cat-trans-bg: #F2F1FD;
+    --fn-cat-trans-ico: #513EC0;
+    --fn-cat-shop-bg: #F2F1FD;
+    --fn-cat-shop-ico: #513EC0;
+    --fn-cat-entertain-bg: #E6FAFF;
+    --fn-cat-entertain-ico: #0E6482;
+    --fn-cat-savings-bg: #E8F5E9;
+    --fn-cat-savings-ico: #4CAF50;
+    --fn-cat-others-bg: #F5F7FA;
+    --fn-cat-others-ico: #8E9CB8;
+
+    /* Shadows */
+    --fn-shadow-sm: 0 2px 6px rgba(0,0,0,.08);
+    --fn-shadow-md: 0 6px 18px rgba(0,0,0,.10);
+    --fn-shadow-lg: 0 12px 32px rgba(0,0,0,.12);
+    --fn-shadow-fab: 0 6px 20px rgba(81,62,192,.40);
+    --fn-focus-ring: 0 0 0 3px rgba(81,62,192,.16);
+    --fn-modal-scrim: rgba(11,30,81,.55);
+
+    /* Radius — unchanged in dark mode */
+    --fn-r-sm: 8px;
+    --fn-r-md: 12px;
+    --fn-r-lg: 16px;
+    --fn-r-xl: 24px;
+    --fn-r-pill: 999px;
+
+    /* Spacing — unchanged in dark mode */
+    --fn-sp-xs: 4px;
+    --fn-sp-sm: 8px;
+    --fn-sp-md: 16px;
+    --fn-sp-lg: 24px;
+    --fn-sp-xl: 32px;
+
+    /* Typography — unchanged in dark mode */
+    --fn-font: 'Plus Jakarta Sans', Inter, Manrope, sans-serif;
+    --fn-mono: 'JetBrains Mono', 'Courier New', monospace;
 }
+
+[data-theme="dark"] {
+    /* ─── DARK MODE OVERRIDES ──────────────────────────────── */
+
+    /* Background layers */
+    --fn-bg: #0E0B2E;
+    --fn-surface: #1A1548;
+    --fn-surface-2: #1A1548;
+    --fn-surface-3: #221C5A;
+    --fn-topbar: #130F3A;
+    --fn-nav: #1A1548;
+
+    /* Text */
+    --fn-text: #EEF0FF;
+    --fn-text-body: #EEF0FF;
+    --fn-text-secondary: #B7B3EC;
+    --fn-text-muted: #9A91E1;
+
+    /* Brand */
+    --fn-primary: #9A91E1;
+    --fn-primary-hover: #B7B3EC;
+    --fn-primary-tint: #241B5E;
+    --fn-secondary: #4CCCF7;
+    --fn-secondary-tint: #0A1F2E;
+
+    /* Borders */
+    --fn-border: #3A2D98;
+    --fn-mist: #3A2D98;
+    --fn-divider: #3A2D98;
+
+    /* Semantic — lightened for WCAG AA contrast */
+    --fn-success: #66BB6A;
+    --fn-success-tint: #0F2D14;
+    --fn-warning: #FFB74D;
+    --fn-warning-tint: #2D2000;
+    --fn-error: #EF5350;
+    --fn-error-tint: #2D0F0F;
+
+    /* Category icon boxes — deep semantic tints */
+    --fn-cat-food-bg: #2D1500;
+    --fn-cat-food-ico: #FFB74D;
+    --fn-cat-bills-bg: #2D0F0F;
+    --fn-cat-bills-ico: #EF5350;
+    --fn-cat-trans-bg: #241B5E;
+    --fn-cat-trans-ico: #9A91E1;
+    --fn-cat-shop-bg: #241B5E;
+    --fn-cat-shop-ico: #9A91E1;
+    --fn-cat-entertain-bg: #071520;
+    --fn-cat-entertain-ico: #4CCCF7;
+    --fn-cat-savings-bg: #0F2D14;
+    --fn-cat-savings-ico: #66BB6A;
+    --fn-cat-others-bg: #1A1548;
+    --fn-cat-others-ico: #9A91E1;
+
+    /* Shadows — heavier alpha on dark bg */
+    --fn-shadow-sm: 0 2px 6px rgba(0,0,0,.30);
+    --fn-shadow-md: 0 6px 18px rgba(0,0,0,.40);
+    --fn-shadow-lg: 0 12px 32px rgba(0,0,0,.50);
+    --fn-shadow-fab: 0 6px 20px rgba(154,145,225,.40);
+    --fn-focus-ring: 0 0 0 3px rgba(154,145,225,.22);
+    --fn-modal-scrim: rgba(0,0,0,.72);
+}
+
+/* ─── GLOBAL THEME TRANSITIONS ─────────────────────────── */
+html {
+    color-scheme: light dark;
+}
+
+html, body, .fn-app, .fn-topbar, .fn-sidebar,
+.fn-nav, .fn-card, .fn-modal, .fn-input, .fn-chip {
+    transition: background-color .25s ease-out, border-color .25s ease-out, color .25s ease-out, box-shadow .25s ease-out;
+}
+
+button, a, input, select, .fn-btn, .fn-fab {
+    transition: background-color .15s ease-out, border-color .15s ease-out, color .15s ease-out, box-shadow .15s ease-out, transform .1s ease-out;
+}
+
+.fn-progress-fill {
+    transition: width .3s ease-out, background-color .25s ease-out;
+}
+
+.fn-toggle::after {
+    transition: left .2s ease-out, background-color .2s ease-out;
+}
+
+svg, i[class*="ti-"] {
+    transition: color .2s ease-out, fill .2s ease-out;
+}
+
+/* ─── COMPONENTS ─────────────────────────── */
+.fn-card {
+    background: var(--fn-surface);
+    border: 1px solid var(--fn-border);
+    border-radius: var(--fn-r-lg);
+    box-shadow: var(--fn-shadow-sm);
+    padding: var(--fn-sp-lg);
+    font-family: var(--fn-font);
+    color: var(--fn-text);
+}
+
+.fn-input {
+    height: 48px;
+    padding: 0 14px;
+    border-radius: var(--fn-r-md);
+    border: 1.5px solid var(--fn-mist);
+    background: var(--fn-surface-3);
+    color: var(--fn-text-body);
+    font-family: var(--fn-font);
+}
+
+    .fn-input:focus {
+        outline: none;
+        border-color: var(--fn-primary);
+        box-shadow: var(--fn-focus-ring);
+    }
+
+.fn-btn {
+    background: var(--fn-primary);
+    color: #fff;
+    border: none;
+    border-radius: var(--fn-r-md);
+    padding: 12px 20px;
+    font-family: var(--fn-font);
+    font-weight: 700;
+    box-shadow: var(--fn-shadow-fab);
+    cursor: pointer;
+}
+
+    .fn-btn:hover {
+        background: var(--fn-primary-hover);
+    }
+
+    .fn-btn:active {
+        transform: scale(0.98);
+    }
