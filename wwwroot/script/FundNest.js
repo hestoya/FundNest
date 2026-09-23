@@ -2,7 +2,7 @@
 const saved = localStorage.getItem('fn-theme');
 if (saved) document.documentElement.setAttribute('data-theme', saved);
 
-// Toggle function — call on button click
+// Toggle function
 function toggleTheme() {
     const html = document.documentElement;
     const isDark = html.getAttribute('data-theme') === 'dark';
